@@ -1,0 +1,454 @@
+@media screen and (max-width:2100px) {}
+
+
+@media screen and (max-width:1700px) {
+    .container {
+        max-width: 1140px;
+    }
+    .content-box.aboutus h3 {
+        font-size: 22px;
+        line-height: 35px;
+    }
+    .faq-box h2 button {
+        font-size: 20px;
+    }
+
+    ul.offers-lsit li p,
+    ul.offers-lsit li a,
+    .content-box p,
+    .content-box.aboutus p,
+    .faq-box .card-body {
+        font-size: 16px;
+    }
+
+    .coupn-image p {
+
+        font-size: 20px;
+    }
+
+    body .banner-slider .owl-dots {
+
+        bottom: -43px;
+        left: 39%;
+    }
+
+    .coupn-image h3 {
+        font-size: 28px;
+    }
+
+    .coupon-qty-detail p.sub-heading {
+        font-size: 20px;
+    }
+
+    .banner-bg {
+        Height: 350px;
+    }
+
+    /* .coupon-qty-detail p.sub-heading {
+        margin-bottom: 5px;
+    }
+    .qtn-wrap ,
+    .radio-btn-wrap{
+        margin-bottom: 10px;
+    } */
+    .tab-content-wrap p,
+    .tab-content-wrap ul li {
+
+        font-size: 16px;
+    }
+
+    ul#pills-tab li button {
+        font-size: 20px;
+    }
+
+    .radio-box {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .banner-bg::before {
+
+        Width: 350px;
+        Height: 350px;
+    }
+
+    .banner-bg::after {
+
+        Width: 640px;
+        Height: 538px;
+    }
+
+    .inner-text a {
+        margin-bottom: 20px;
+    }
+
+
+
+    .outer-cpn h5,
+    .top-head p {
+        font-size: 17px;
+    }
+
+    .inner-text h3 {
+        font-size: 37px;
+        line-height: 52px;
+    }
+
+    .outer-cpn p {
+
+        font-size: 15px;
+    }
+
+    .coupons-wrap.flt-grp ul li p,
+    .radio-btn-wrap label,
+    .top-flt p.total,
+    .values,
+    p.hundred,
+    body .top-flt .form-group label,
+    body .top-flt select.form-control {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width:1380px) {
+    .banner-bg::after {
+        Width: 480px;
+        Height: 388px;
+        bottom: -75px;
+    }
+
+    .banner-bg {
+        Height: 310px;
+    }
+
+    .banner-bg::before {
+        Width: 310px;
+        Height: 310px;
+    }
+
+    .banner-bg::before {
+        Width: 310px;
+        Height: 310px;
+    }
+
+    .inner-text h3 {
+        margin-bottom: 30px;
+    }
+
+    .banner-slider .owl-dots {
+        bottom: -42px;
+        left: 35%;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .header div#navbarSupportedContent {
+        display: block !important;
+        flex-basis: auto !important;
+    }
+
+    .lower-header ul.navbar-nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-direction: row;
+    }
+}
+
+@media screen and (max-width:1199px) {
+    .navbar-expand-xl .navbar-nav .dropdown-menu {
+        position: absolute;
+        float: unset !important;
+        right: 0px !important;
+        /* width: 200px; */
+        left: unset;
+    }
+}
+
+@media screen and (max-width:1150px) and (min-width:992px) {
+    .banner-bg::before {
+        Width: 260px;
+        Height: 260px;
+    }
+
+    .p-120 {
+        padding: 80px 0;
+    }
+
+    body .banner-slider .owl-dots {
+        left: 33% !important;
+    }
+
+    .banner-bg {
+        Height: 260px;
+    }
+
+    .banner-bg::after {
+        Width: 440px;
+        Height: 338px;
+        bottom: -75px;
+    }
+
+    .inner-text h3 {
+        font-size: 30px;
+        line-height: 38px;
+    }
+
+    .inner-text h3 {
+        margin-bottom: 10px;
+    }
+
+    .inner-text a {
+        margin-bottom: 10px;
+    }
+
+    .banner-bg .cstm-btn {
+        width: 190px;
+        padding: 15.5px 10px;
+    }
+
+}
+
+@media screen and (max-width:1024px) {
+    .p-120 {
+        padding: 80px 0;
+    }
+    .content-box.aboutus .cont-marging,
+    .content-box.aboutus h3 {
+        margin-bottom: 15px;
+    }
+    .banner-cont p {
+        font-size: 36px;
+        line-height: 44px;
+    }
+}
+
+@media screen and (max-width:991px) {
+    body .grid-container {
+
+        grid-template-columns: 100%;
+    }
+    .banner-bg::after {
+        display: none !important;
+    }
+    .contact-list-wrap.main-head ul {
+        padding-right: 0;
+    }
+    ul.offers-lsit li {
+        margin-bottom: 15px;
+    }
+
+    ul.offers-lsit {
+        padding-left: 30px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+
+    ul.offers-lsit li::after {
+        top: 4px;
+    }
+
+    ul#pills-tab {
+        margin-top: 30px;
+        margin-bottom: 30px !important;
+    }
+
+    .banner-bg .inner-text {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .inner-text h3 {
+        text-align: left;
+    }
+
+    .lower-header ul.navbar-nav {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+    }
+    .contact-list-wrap ul li p {
+        font-size: 18px;
+    }
+    .contact-list-wrap ul li p span {
+        font-size: 18px;
+    }
+    .main-head p.sub-heading {
+        font-size: 24px;
+        line-height: 24px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .cont-marging {
+        margin-bottom: 20px;
+    }
+
+    .content-box h3 {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 10px;
+    }
+
+    .banner-bg::before {
+        display: none;
+    }
+
+    .input-wrap .form-control {
+
+        width: 280px;
+    }
+
+    .banner-bg .inner-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .inner-text h3 {
+        text-align: center;
+    }
+
+    .inner-text h3 {
+        font-size: 30px;
+        line-height: 42px;
+    }
+
+    body .banner-slider .owl-dots {
+
+        left: 33% !important;
+    }
+
+    .p-120 {
+        padding: 60px 0;
+    }
+
+    footer {
+        padding: 15px;
+
+    }
+
+    .footer-wrap h3 {
+        font-size: 18px;
+        line-height: 26px;
+        margin-bottom: 10px;
+    }
+
+    .footer-wrap ul.fotter-list li a {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .footer-wrap ul.fotter-list li {
+        margin-bottom: 5px;
+    }
+
+    .footer-wrap {
+        margin-bottom: 30px;
+    }
+
+    p.total-price {
+
+        font-size: 36px;
+    }
+
+    .radio-btn-wrap,
+    .qtn-wrap {
+        margin-bottom: 20px;
+    }
+
+    .coupn-image h3 {
+        font-size: 28px;
+        line-height: 38px;
+    }
+
+    .banner-cont span {
+
+        font-size: 24px;
+    }
+
+    .ptb-65 {
+        padding: 65px 0 65px;
+    }
+
+
+}
+
+@media screen and (max-width:580px) {
+
+    .contact-list-wrap ul li p {
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+    }
+
+    .contact-list-wrap ul li p span {
+        margin-left: 0 !important;
+
+    }
+    .input-wrap .form-control {
+        display: none;
+    }
+
+    .content-box h3 {
+        font-size: 22px;
+
+    }
+
+    ul#pills-tab,
+    ul#pills-tab li,
+    ul#pills-tab li button {
+
+        width: 100%;
+    }
+
+    .coupn-image figure {
+        margin: 10px 0 20px;
+    }
+
+    .upper-header p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 27px;
+        color: #000000;
+        text-transform: uppercase;
+    }
+
+    .top-flt {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .list-view {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    body .top-flt select.form-control {
+        width: 100%;
+    }
+
+    .list-view ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:480px) {}

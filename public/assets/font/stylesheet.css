@@ -1,0 +1,270 @@
+@font-face {
+    font-family: 'Graphik';
+    src: url('Graphik-Black.woff2') format('woff2'),
+        url('Graphik-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik Cond';
+    src: url('GraphikCond-ExtralightItalic.woff2') format('woff2'),
+        url('GraphikCond-ExtralightItalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik';
+    src: url('Graphik-Bold.woff2') format('woff2'),
+        url('Graphik-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik';
+    src: url('Graphik-BoldItalic.woff2') format('woff2'),
+        url('Graphik-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik Cond';
+    src: url('GraphikCond-BlackItalic.woff2') format('woff2'),
+        url('GraphikCond-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik';
+    src: url('Graphik-BlackItalic.woff2') format('woff2'),
+        url('Graphik-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik Cond';
+    src: url('GraphikCond-BoldItalic.woff2') format('woff2'),
+        url('GraphikCond-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik Cond';
+    src: url('GraphikCond-Black.woff2') format('woff2'),
+        url('GraphikCond-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik Cond';
+    src: url('GraphikCond-Bold.woff2') format('woff2'),
+        url('GraphikCond-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik Cond';
+    src: url('GraphikCond-Semibold.woff2') format('woff2'),
+        url('GraphikCond-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik Cond';
+    src: url('GraphikCond-MediumItalic.woff2') format('woff2'),
+        url('GraphikCond-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik Cond';
+    src: url('GraphikCond-RegularItalic.woff2') format('woff2'),
+        url('GraphikCond-RegularItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik Cond';
+    src: url('GraphikCond-LightItalic.woff2') format('woff2'),
+        url('GraphikCond-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik Cond';
+    src: url('GraphikCond-Medium.woff2') format('woff2'),
+        url('GraphikCond-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik Cond';
+    src: url('GraphikCond-SemiboldItalic.woff2') format('woff2'),
+        url('GraphikCond-SemiboldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik Cond';
+    src: url('GraphikCond-Extralight.woff2') format('woff2'),
+        url('GraphikCond-Extralight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik Cond';
+    src: url('GraphikCond-Regular.woff2') format('woff2'),
+        url('GraphikCond-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik Cond';
+    src: url('GraphikCond-Light.woff2') format('woff2'),
+        url('GraphikCond-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik';
+    src: url('Graphik-ExtralightItalic.woff2') format('woff2'),
+        url('Graphik-ExtralightItalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik Cond';
+    src: url('GraphikCond-Super.woff2') format('woff2'),
+        url('GraphikCond-Super.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik';
+    src: url('Graphik-Extralight.woff2') format('woff2'),
+        url('Graphik-Extralight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik Cond';
+    src: url('GraphikCond-SuperItalic.woff2') format('woff2'),
+        url('GraphikCond-SuperItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik Cond';
+    src: url('GraphikCond-ThinItalic.woff2') format('woff2'),
+        url('GraphikCond-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik Cond';
+    src: url('GraphikCond-Thin.woff2') format('woff2'),
+        url('GraphikCond-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik';
+    src: url('Graphik-LightItalic.woff2') format('woff2'),
+        url('Graphik-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik';
+    src: url('Graphik-Light.woff2') format('woff2'),
+        url('Graphik-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik';
+    src: url('Graphik-MediumItalic.woff2') format('woff2'),
+        url('Graphik-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik';
+    src: url('Graphik-Regular.woff2') format('woff2'),
+        url('Graphik-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik';
+    src: url('Graphik-Medium.woff2') format('woff2'),
+        url('Graphik-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik';
+    src: url('Graphik-RegularItalic.woff2') format('woff2'),
+        url('Graphik-RegularItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
