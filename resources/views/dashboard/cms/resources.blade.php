@@ -19,32 +19,25 @@
         margin: 5px;
     }
 
-    .dropdown-content button {
+    /* .dropdown-content button {
         display: block;
-        background-color: #4CAF50;
+        background-color: #212529;
         color: white;
         padding: 10px;
         text-align: center;
         border: none;
         cursor: pointer;
-    }
+    } */
 
-    .dropdown-content button:hover {
+    /* .dropdown-content button:hover {
         background-color: #3e8e41;
-    }
+    } */
 
     .dropdown:hover .dropdown-content {
         display: block;
     }
 
-    .dropbtn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
+
 
 /* Container for the dropdown */
 .dropdown {
@@ -429,17 +422,17 @@
                                 <div class="table_tr">
                                     <div class="table_date"><strong>{{ $weekDate['day'] }}</strong>{{ $weekDate['date'] }}</div>
                                     <div class="table_time">
-                                        <input type="time" name="starttime" value="Select">
+                                        <input type="time" class="starttime" name="starttime" value="Select">
                                         <span>-</span>
-                                        <input type="time" name="endtime" value="Select">
+                                        <input type="time" class="endtime" name="endtime" value="Select">
                                     </div>
-                                    <div class="table_add_more" onclick="addavailability('{{ $weekDate['day'].$weekDate['date'] }}')">
+                                    <div class="table_add_more" onclick="addAvailability('{{ $weekDate['day'].$weekDate['date'] }}')">
                                         <div class="plus_items-table"><i class="bi bi-plus-circle-fill"></i></div>
                                     </div>
                                     <div class="table_add_more">
                                         <!-- <div class="copy_items-table"><i class="bi bi-copy"></i></div> -->
                                         <div class="dropdown">
-                                            <button class="copy_items-table dropbtn"><i class="bi bi-copy"></i></button>
+                                            <button type="button" class="copy_items-table dropbtn"><i class="bi bi-copy"></i></button>
                                             <div class="dropdown-content">
                                                 <input type="checkbox" id="saturday" name="day" value="Saturday">
                                                 <label for="saturday">Saturday</label><br>
@@ -447,12 +440,12 @@
                                                 <label for="sunday">Sunday</label><br>
                                                 <input type="checkbox" id="monday" name="day" value="Monday">
                                                 <label for="monday">Monday</label><br>
-                                                <button onclick="applyTimes()">Apply</button>
+                                                <button type="button" class="btn btn-dark rounded-pill request_now" onclick="applyTimes()">Apply</button>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="table_time" id="{{ $weekDate['day'].$weekDate['date'] }}">
-                                    </div </div>
+                                    </div>
                                     @endforeach
                                 </div>
 
@@ -561,22 +554,6 @@
 @push('scripts')
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
-
-    function applyTimes() {
-        // Example: Copy times logic
-        const days = [];
-        if (document.getElementById('saturday').checked) {
-            days.push('Saturday');
-        }
-        if (document.getElementById('sunday').checked) {
-            days.push('Sunday');
-        }
-        if (document.getElementById('monday').checked) {
-            days.push('Monday');
-        }
-        
-        alert('Times copied to: ' + days.join(', '));
-    }
 
     function openSidebar() {
         document.getElementById("sidebar").style.width = "300px";
@@ -695,50 +672,148 @@
         };
         return date.toLocaleDateString('en-GB', options);
     }
+    function formatFullDay(date) {
+        const options = {
+            weekday: 'long'
+        };
+        return date.toLocaleDateString('en-GB', options);
+    }
 
     var addDays = @json($daysToAdd);
 
-
-    function updateAvailabilityDates(startDate) {
+    function getCopyDay(startDate, clickedDay='') {
         let html = '';
         for (let i = 0; i <= addDays; i++) {
             let current = new Date(startDate);
             current.setDate(startDate.getDate() + i);
-            let day = formatDay(current);
-            let date = formatDate(current);
+            let fulldayname = formatFullDay(current);
             html += `
-                <div class="table_tr">
-              
-                    <div class="table_date"><strong>${day}</strong>${date}</div>
-                    <div class="table_time">
-                        <div class="time_pair">
-                            <input type="time" name="starttime" value="Select">
-                            <span>-</span>
-                            <input type="time" name="endtime" value="Select">
-                        </div>
-                    </div>
-                    <div class="table_add_more" onclick="addavailability('addMoreTr${i}')">
-                        <div class="plus_items-table"><i class="bi bi-plus-circle-fill"></i></div>
-                    </div>
-                    <div class="table_add_more">
-                    <div class="dropdown">
-                        <button class="copy_items-table dropbtn"><i class="bi bi-copy"></i></button>
-                        <div class="dropdown-content">
-                            <input type="checkbox" id="saturday" name="day" value="Saturday">
-                            <label for="saturday">Saturday</label><br>
-                            <input type="checkbox" id="sunday" name="day" value="Sunday">
-                            <label for="sunday">Sunday</label><br>
-                            <input type="checkbox" id="monday" name="day" value="Monday">
-                            <label for="monday">Monday</label><br>
-                            <button onclick="applyTimes()">Apply</button>
-                        </div>
-                    </div>
+            <input type="checkbox" data-copyrowIndex="${i}" id="${(fulldayname.toLowerCase())}" ${(clickedDay == fulldayname) ? 'checked readonly' :''} name="day" value="${fulldayname}">
+            <label for="${fulldayname}">${fulldayname}</label><br>`;
+        }
+        return html;
+    }
+
+    function parseTime(timeStr) {
+    if (!timeStr || !timeStr.includes(':')) {
+        console.error('Invalid time format:', timeStr);
+        return '';
+    }
+    const [time, modifier] = timeStr.split(' ');
+    let [hours, minutes] = time.split(':');
+    if (hours === '12') {
+        hours = '00';
+    }
+    if (modifier === 'PM') {
+        hours = parseInt(hours, 10) + 12;
+    }
+    return `${hours.padStart(2, '0')}:${minutes}`;
+}
+$('body').on('change', '.starttime', function() {
+    var startTimeValue = $(this).val();
+    console.log("startTimeValue::",startTimeValue)
+    // Update the value attribute of the starttime input
+    $(this).attr('value', startTimeValue);
+});
+
+// When the endtime input changes
+$('body').on('change', '.endtime', function() {
+    var endTimeValue = $(this).val();
+    console.log("endTimeValue::",endTimeValue)
+    // Update the value attribute of the endtime input
+    $(this).attr('value', endTimeValue);
+});
+
+function applyTimes(rowIndex) {
+    var dropdownContent = $(`#checkboxDiv${rowIndex}`);
+    var selectedCheckboxes = dropdownContent.find('input[type="checkbox"]:checked');
+    var startTimeInput = $(`#starttime${rowIndex}`);
+    var endTimeInput = $(`#endtime${rowIndex}`);
+    var mainHTML = $(`#timeDiv${rowIndex}`).html();
+    var addMoreTrhtml = $(`#addMoreTr${rowIndex}`).html();
+
+    if (startTimeInput.length && endTimeInput.length) {
+        var startTime = startTimeInput.val();
+        var endTime = endTimeInput.val();
+        console.log(typeof startTime);
+        selectedCheckboxes.each(function() {
+            var copyRowIndex = $(this).attr('data-copyrowindex');
+            console.log("copyRowIndex::",copyRowIndex, "Selected rowIndex::",rowIndex)
+            if(rowIndex != copyRowIndex){
+                var formattedStartTime = parseTime(startTime);
+                var formattedEndTime = parseTime(endTime);
+
+                $(`#starttime${copyRowIndex}`).val(formattedStartTime);
+                $(`#endtime${copyRowIndex}`).val(formattedEndTime);
+                if ($(`#addMoreTr${copyRowIndex}`).length) {
+                    // If it exists, append the HTML directly
+                    $(`#timeDiv${copyRowIndex}`).empty().html(mainHTML);
+                    $(`#addMoreTr${copyRowIndex}`).empty().html(addMoreTrhtml);
+                } else {
+                    // If it doesn't exist, create the element first and then append the HTML
+                    const newDiv = $(`<div id="addMoreTr${copyRowIndex}"></div>`);
+                    newDiv.html(addMoreTrhtml);
+                    // Append the new element wherever you want
+                    // For example, if you want to append it to the body:
+                    $('body').append(newDiv);
+                }
+            }
+        });
+    } else {
+        console.error('Start or end time input not found for row:', rowIndex);
+    }
+}
+
+function updateAvailabilityDates(startDate) {
+    let html = '';
+    for (let i = 0; i <= addDays; i++) {
+        let current = new Date(startDate);
+        current.setDate(startDate.getDate() + i);
+        let day = formatDay(current);
+        let fulldayname = formatFullDay(current);
+        let date = formatDate(current);
+        html += `
+            <div class="table_tr">
+                <div class="table_date"><strong>${day}</strong>${date}</div>
+                <div class="table_time" id="timeDiv${i}">
+                    <div class="time_pair">
+                        <input type="time" class="starttime" name="starttime[]" id="starttime${i}" value="">
+                        <span>-</span>
+                        <input type="time" class="endtime" name="endtime[]" id="endtime${i}" value="">
                     </div>
                 </div>
-                <div id="addMoreTr${i}"></div>`;
-        }
-        $('.choose_availability-time').html(html);
+                <div class="table_add_more" onclick="addAvailability('addMoreTr${i}','${i}')" id="addMBtnDiv${i}">
+                    <div class="plus_items-table"><i class="bi bi-plus-circle-fill"></i></div>
+                </div>
+                <div class="table_add_more">
+                    <div class="dropdown">
+                        <button type="button" class="copy_items-table dropbtn"><i class="bi bi-copy"></i></button>
+                        <div class="dropdown-content" id="checkboxDiv${i}">
+                            ${getCopyDay(startDate, fulldayname)}
+                            <button type="button" class="btn btn-dark rounded-pill request_now" onclick="applyTimes(${i})">Apply</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="addMoreTr${i}"></div>`;
     }
+    $('.choose_availability-time').html(html);
+}
+    function copyTime(day) {
+        const startInput = document.getElementById(`${day}-start`);
+        const endInput = document.getElementById(`${day}-end`);
+        const startTime = startInput.value;
+        const endTime = endInput.value;
+        
+        if (startTime && endTime) {
+            // Store the copied times in a global variable or use other means to keep track
+            window.copiedTimes = { startTime, endTime };
+            alert(`Copied times: ${startTime} - ${endTime}`);
+        } else {
+            alert('Please enter both start and end times.');
+        }
+    }
+
 
 
     $(document).ready(function() {
@@ -786,32 +861,20 @@
         });
     });
 
-    function addavailability(id) {
-        var html = ` <div class="table_tr" id="">
+    function addAvailability(id,index) {
+    var html = ` <div class="table_tr" id="">
                     <div class="table_date"><strong></strong></div>
                     <div class="table_time">
                         <div class="time_pair">
-                            <input type="time" name="starttime" value="Select">
+                            <input type="time" class="addmorestarttime starttime" name="starttime[]"  value="">
                             <span>-</span>
-                            <input type="time" name="endtime" value="Select">
+                            <input type="time" name="endtime[]" class="addmoreendtime endtime" value="" >
                         </div>
                     </div>
                     <div class="table_add_more">
                         <div class="plus_items-table remove_feature"><i class="bi bi-dash-circle-fill"></i></div>
                     </div>
                     <div class="table_add_more">
-                        <div class="dropdown">
-                            <button class="copy_items-table dropbtn"><i class="bi bi-copy"></i></button>
-                            <div class="dropdown-content">
-                                <input type="checkbox" id="saturday" name="day" value="Saturday">
-                                <label for="saturday">Saturday</label><br>
-                                <input type="checkbox" id="sunday" name="day" value="Sunday">
-                                <label for="sunday">Sunday</label><br>
-                                <input type="checkbox" id="monday" name="day" value="Monday">
-                                <label for="monday">Monday</label><br>
-                                <button onclick="applyTimes()">Apply</button>
-                            </div>
-                        </div>
                     </div>
                 </div>`;
         $('#' + id).append(html)
